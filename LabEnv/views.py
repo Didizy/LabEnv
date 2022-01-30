@@ -12,7 +12,7 @@ class EnvView(APIView):
         response = {
             "ENV": Enviroment.env,
         }
-        return response
+        return Response(response)
 
 
 class TestView(APIView):
@@ -20,4 +20,4 @@ class TestView(APIView):
         response = {
             "message": "OK"
         }
-        return response
+        return Response(response)
