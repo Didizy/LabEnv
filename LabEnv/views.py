@@ -8,10 +8,16 @@ import os
 
 
 class EnvView(APIView):
-    parser_classes = (MultiPartParser, FormParser)
-
     def get(self, request):
         response = {
             "ENV": Enviroment.env,
         }
-        return Response(response, status=status.HTTP_200_OK)
+        return response
+
+
+class TestView(APIView):
+    def get(self, request):
+        response = {
+            "message": "OK"
+        }
+        return response
