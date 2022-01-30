@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import EnvView
+from .views import EnvView, TestView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('health/', EnvView.as_view()),
+    path('check/', TestView.as_view())
 ]
