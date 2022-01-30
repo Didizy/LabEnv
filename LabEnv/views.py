@@ -7,11 +7,11 @@ from .status import *
 import os
 
 
-class JsonView(APIView):
+class EnvView(APIView):
     parser_classes = (MultiPartParser, FormParser)
 
     def get(self, request):
         response = {
-            "APP_ENV": Enviroment.env,
+            "ENV": Enviroment.env,
         }
         return Response(response, status=status.HTTP_200_OK)
